@@ -2,6 +2,20 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
 import Characters from "./components/characters";
+import styled from "styled-components";
+
+const AppStyle = styled.section`
+
+    display:flex;
+    width: 60%;
+    margin: 10% auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 4rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px #fff;
+
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -27,7 +41,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <Characters characters ={info}/>
+      <div>
+        <AppStyle>
+          <Characters characters ={info}/>
+      </AppStyle>
+      </div>
     </div>
   );
 }
